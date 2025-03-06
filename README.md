@@ -1,11 +1,3 @@
-### Hexlet tests and linter status:
-[![Actions Status](https://github.com/Danilka3310/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Danilka3310/frontend-project-44/actions)
-
-[![Maintainability](https://api.codeclimate.com/v1/badges/d6d5342d4ec401b0f6b1/maintainability)](https://codeclimate.com/github/Danilka3310/frontend-project-44/maintainability)
-
-[![Test Coverage](https://api.codeclimate.com/v1/badges/d6d5342d4ec401b0f6b1/test_coverage)](https://codeclimate.com/github/Danilka3310/frontend-project-44/test_coverage)
-
-
 ### How to install games: 
 #### Open console and execute:
   To clone repository:
@@ -38,3 +30,10 @@ Type the name of the game and press Enter!
 > **brain-progression** - the player is shown a series of numbers forming an arithmetic progression in which one of the numbers is replaced by two points. The player must determine this number;
 
 > **brain-prime** - user is shown a random number. And he needs to answer **yes** if the number is prime, or **no** if not.
+
+### Hexlet tests and linter status:
+[![Actions Status](https://github.com/Danilka3310/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Danilka3310/frontend-project-44/actions)
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/d6d5342d4ec401b0f6b1/maintainability)](https://codeclimate.com/github/Danilka3310/frontend-project-44/maintainability)
+
+[![Test Coverage](https://api.codeclimate.com/v1/badges/d6d5342d4ec401b0f6b1/test_coverage)](https://codeclimate.com/github/Danilka3310/frontend-project-44/test_coverage)
