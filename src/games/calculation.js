@@ -1,4 +1,4 @@
-import gameEngine from '../gameEngine.js';
+import gameEngine from '../index.js';
 import { getRandomNumber, randomEquasion } from '../utils.js';
 
 const rule = 'What is the result of the expression?';

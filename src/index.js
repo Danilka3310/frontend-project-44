@@ -1,19 +1,32 @@
-const readlineSync = require('readline-sync');
-const games = require('./games');
+import readlineSync from 'readline-sync';
 
-const playGame = (game) => {
-  const name = readlineSync.question('May I have your name? ');
-  game(name);
+const roundsCount = 3;
+
+const greet = () => {
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
+  return userName;
 };
 
-const main = () => {
+export default (rule, getQuestionAndAnswer) => {
   console.log('Welcome to the Brain Games!');
-  const game = games[process.argv[2]];
-  if (!game) {
-    console.log('Unknown game');
-    return;
-  }
-  playGame(game);
-};
+  const userName = greet();
+  console.log(rule);
+  let round = 0;
 
-main();
+  while (round < roundsCount) {
+    const [question, correctAnswer] = getQuestionAndAnswer();
+    console.log(`Question: ${question}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+
+    if (correctAnswer !== userAnswer) {
+      console.log(`"${userAnswer}" is a wrong answer.\nCorrect answer was "${correctAnswer}".`);
+      console.log(`Let's try again, ${userName}!`);
+      return;
+    }
+
+    console.log('Correct!');
+    round += 1;
+  }
+  console.log(`Congratulations, ${userName}!`);
+};
