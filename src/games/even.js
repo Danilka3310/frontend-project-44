@@ -13,4 +13,3 @@ const getQuestionAndAnswer = () => {
 export default () => {
   gameEngine(rule, getQuestionAndAnswer);
 };
-

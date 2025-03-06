@@ -37,3 +37,4 @@ Type the name of the game and press Enter!
 [![Maintainability](https://api.codeclimate.com/v1/badges/d6d5342d4ec401b0f6b1/maintainability)](https://codeclimate.com/github/Danilka3310/frontend-project-44/maintainability)
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/d6d5342d4ec401b0f6b1/test_coverage)](https://codeclimate.com/github/Danilka3310/frontend-project-44/test_coverage)
+

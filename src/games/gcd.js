@@ -7,7 +7,6 @@ const answerGcd = (a, b) => {
   if (!b) {
     return a;
   }
-
   return answerGcd(b, a % b);
 };
 
