@@ -10,7 +10,7 @@
 #### Open console and execute:
   To clone repository:
   ```sh
-git clone https://github.com/Denchik3310/frontend-project-44
+git clone https://github.com/Danilka3310/frontend-project-44
 ```
   To install project:
   ```
