@@ -1,4 +1,7 @@
 #!/usr/bin/env node
-import runCalc from '../src/games/calc.js';
 
-runCalc();
+import GameUtils from '../src/utils.js';
+
+import calculation from '../src/games/calc.js';
+
+GameUtils('What is the result of the expression?', calculation);

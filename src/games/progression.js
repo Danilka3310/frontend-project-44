@@ -1,32 +1,17 @@
-import gameEngine from '../index.js';
-import { getRandomNumber } from '../utils.js';
-
-const rule = 'What number is missing in the progression?';
-
-const progressionLength = 10;
-
-const getProgression = (startProgression, stepProgression) => {
-  const progressions = [];
-  for (let i = 0; i < progressionLength; i += 1) {
-    const value = startProgression + stepProgression * i;
-    progressions.push(value);
+const progression = () => {
+  const arrayLength = Math.floor(Math.random() * 5) + 5;
+  const progressDelta = Math.round(Math.random() * 10);
+  const firstNumber = Math.round(Math.random() * 100);
+  const progression = [];
+  progression.push(firstNumber);
+  for (let i = 1; i < arrayLength; i += 1) {
+    progression.push(progression[i - 1] + progressDelta);
   }
-  return progressions;
+  const emptyIndex = Math.floor(Math.random() * arrayLength);
+  const answer = `${progression[emptyIndex]}`;
+  progression[emptyIndex] = '..';
+
+  return [progression.join(' '), answer];
 };
 
-const getQuestionAndAnswer = () => {
-  const minStep = 2;
-  const maxStep = 10;
-  const start = getRandomNumber(1, 100);
-  const step = getRandomNumber(minStep, maxStep);
-  const progression = getProgression(start, step);
-  const minIndexOfHiddenNumber = 0;
-  const maxIndexOfHiddenNumber = progressionLength - 1;
-  const indexOfHiddenNumber = getRandomNumber(minIndexOfHiddenNumber, maxIndexOfHiddenNumber);
-  const answer = String(progression[indexOfHiddenNumber]);
-  progression[indexOfHiddenNumber] = '..';
-  const question = progression.join(' ');
-  return [question, answer];
-};
-
-export default () => gameEngine(rule, getQuestionAndAnswer);
+export default progression;

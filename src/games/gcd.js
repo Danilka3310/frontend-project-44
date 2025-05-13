@@ -1,21 +1,16 @@
-import gameEngine from '../index.js';
-import { getRandomNumber } from '../utils.js';
-
-const rule = 'Find the greatest common divisor of given numbers.';
-
-const answerGcd = (a, b) => {
-  if (!b) {
-    return a;
+const GCD = () => {
+  const num1 = Math.round(Math.random() * 50);
+  const num2 = Math.round(Math.random() * 50);
+  let a = num1;
+  let b = num2;
+  while (a !== 0 && b !== 0) {
+    if (a >= b) {
+      a -= b;
+    } else {
+      b -= a;
+    }
   }
-  return answerGcd(b, a % b);
+  const answer = `${a + b}`;
+  return [`${num1} ${num2}`, answer];
 };
-
-const getQuestionAndAnswer = () => {
-  const question = [getRandomNumber(0, 100), getRandomNumber(0, 100)];
-  const answer = answerGcd(...question).toString();
-  return [question.join(' '), answer];
-};
-
-export default () => {
-  gameEngine(rule, getQuestionAndAnswer);
-};
+export default GCD;

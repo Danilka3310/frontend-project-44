@@ -1,15 +1,12 @@
-import gameEngine from '../index.js';
-import { getRandomNumber } from '../utils.js';
+const EvenNumbers = () => {
+  const q = Math.round(Math.random() * 100);
+  let a = '';
+  if (q % 2 === 0) {
+    a = 'yes';
+  } else {
+    a = 'no';
+  }
 
-const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
-
-const isEven = (num) => num % 2 === 0;
-const getQuestionAndAnswer = () => {
-  const question = getRandomNumber(0, 100);
-  const answer = isEven(question) ? 'yes' : 'no';
-  return [question, answer];
+  return [q, a];
 };
-
-export default () => {
-  gameEngine(rule, getQuestionAndAnswer);
-};
+export default EvenNumbers;

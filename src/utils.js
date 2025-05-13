@@ -1,28 +1,28 @@
-const getRandomNumber = (min, max) => {
-  const number = Math.floor(Math.random() * (max - min + 1)) + min;
-  return number;
-};
-  
-const randomEquasion = (num1, num2) => {
-  const arrayOfSymbols = ['+', '-', '*'];
-  const randomSymbol = arrayOfSymbols[Math.floor(Math.random() * arrayOfSymbols.length)]; {
-    if (randomSymbol === '+') {
-      return {
-        equasion: `${num1} + ${num2}`,
-        result: `${num1 + num2}`,
-      };
-    } if (randomSymbol === '-') {
-      return {
-        equasion: `${num1} - ${num2}`,
-        result: `${num1 - num2}`,
-      };
+import readlineSync from 'readline-sync';
+import runGreet from './cli.js';
+
+const GameUtils = (description, taskFunc) => {
+  const playerName = runGreet();
+  console.log(description);
+  let mark = 0;
+  for (let i = 1; i <= 3; i += 1) {
+    const step = taskFunc();
+
+    console.log(`Question: ${step[0]}`);
+    const answer = readlineSync.question('Answer: ');
+
+    if (answer === step[1]) {
+      console.log('Correct!');
+      mark += 1;
+    } else {
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${step[1]}'.`);
+      console.log(`Let's try again, ${playerName}!\n`);
+      break;
     }
-    return {
-      equasion: `${num1} * ${num2}`,
-      result: `${num1 * num2}`,
-    };
-  };
+  }
+  if (mark === 3) {
+    console.log(`Congratulations, ${playerName}!`);
+  }
 };
-  
-export { getRandomNumber, randomEquasion };
-  
+
+export default GameUtils;

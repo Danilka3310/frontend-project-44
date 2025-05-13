@@ -1,13 +1,22 @@
-import gameEngine from '../index.js';
-import { getRandomNumber, randomEquasion } from '../utils.js';
+const calculation = () => {
+  const operand1 = Math.round(Math.random() * 10);
+  const operand2 = Math.round(Math.random() * 10);
+  const operator = ['+', '*', '-'];
+  const indexOPer = Math.floor(Math.random() * 2);
+  let answer = '';
+  switch (indexOPer) {
+    case 0:
+      answer = `${operand1 + operand2}`;
+      break;
+    case 1:
+      answer = `${operand1 * operand2}`;
+      break;
+    default:
+      answer = `${operand1 - operand2}`;
+      break;
+  }
 
-const rule = 'What is the result of the expression?';
-
-const getQuestionAndAnswer = () => {
-  const equasion = randomEquasion(getRandomNumber(0, 100), getRandomNumber(0, 100));
-  return [equasion.equasion, equasion.result];
+  return [`${operand1} ${operator[indexOPer]} ${operand2}`, answer];
 };
 
-export default () => {
-  gameEngine(rule, getQuestionAndAnswer);
-};
+export default calculation;
